@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-2 col-4">
+        <div style="height: 100vh; box-shadow: 1px 0px 20px rgba(0,0,0,0.1);">
+            <nav class="ms-2">
+                <ul>
+                    <li *ngFor="let item of menuItems">
+                        <a [routerLink]="[item.path]">{{item.title}}</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="col-md-10 col-8">
+        <div>
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+</div>

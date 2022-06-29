@@ -1,0 +1,8 @@
+<form (ngSubmit)="submit()" #form="ngForm">
+    <input type="text" name="nombre" class="form-control" [(ngModel)]="user.nombre" pattern="^0{1}9{1}[0-9]{8}"
+        #uname="ngModel" title="Debe empezar con 09" required>
+    <div class="text-danger text-sm-center" *ngIf="uname.errors?.['pattern']">
+        Cedula no valida
+    </div>
+    <button type="submit" class=" mt-2 btn btn-outline-primary" [disabled]="!form.valid">submit</button>
+</form>
